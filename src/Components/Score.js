@@ -1,5 +1,5 @@
 import React from 'react';
 
-const score = () => <div>100</div>;
+const score = props => <div>{props.score}</div>;
 
 export default score;

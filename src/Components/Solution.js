@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
+import Letter from './Letter'
 
 class Solution extends Component {
     render() { 
-        const solution = ["_ ", "_ ", "_ ", "_ "]
         return (
             <React.Fragment>
-                {solution.map(letter => <span>{letter}</span>)}
-                <div><em>Hint</em></div>
+                {this.props.solution.word.split('').map(letter => {
+                    return this.props.letterStatus[letter] ?
+                        <Letter key={letter} letter={letter}/> :
+                        <Letter key={letter} letter="_"/>
+                    }
+                )}
+                <div><em>{this.props.solution.hint}</em></div>
             </React.Fragment> 
          );
     }
